@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: pink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 3em;
+            color: red;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+        #yes {
+            background-color: lightgreen;
+        }
+        #no {
+            background-color: lightcoral;
+        }
+        .yay {
+            font-size: 4em;
+            color: red;
+            display: none;
+            animation: bounce 1s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my Valentine? 💖</h1>
+    <div class="buttons">
+        <button id="yes" onclick="showYay()">Yes</button>
+        <button id="no" onclick="makeYesBigger()">No</button>
+    </div>
+    <div class="yay" id="yay">YAY!!! 🎉😍</div>
+    
+    <script>
+        let yesButton = document.getElementById("yes");
+        let noButton = document.getElementById("no");
+        let yayText = document.getElementById("yay");
+        let yesSize = 1.5;
+
+        function showYay() {
+            yayText.style.display = "block";
+            document.querySelector(".buttons").style.display = "none";
+        }
+
+        function makeYesBigger() {
+            yesSize += 0.5;
+            yesButton.style.fontSize = yesSize + "em";
+            yesButton.style.padding = (yesSize * 6) + "px " + (yesSize * 12) + "px";
+        }
+    </script>
+</body>
+</html>
+
+<!--
+GhostHasGone was here.
+-->
